@@ -1,25 +1,16 @@
-import Card from "react-bootstrap/Card";
-import { Link } from "react-router-dom";
+import Container from "react-bootstrap/Container";
+import Navbar from "react-bootstrap/Navbar";
 
-function Mascota(props) {
+function NavBar() {
  return (
-   <Card style={{ width: "18rem", height: "24rem" }} className="mb-3">
-     <Card.Img
-       style={{ height: "14rem" }}
-       variant="top"
-       src={props.mascota.foto}
-       alt={props.mascota.descripcion}
-     />
-     <Card.Body>
-       <Card.Title>
-         <Link to={"/mascotas/" + props.mascota.id}>
-           {props.mascota.nombre}
-         </Link>
-       </Card.Title>
-       <Card.Text>{props.mascota.descripcion}</Card.Text>
-     </Card.Body>
-   </Card>
+   <>
+     <Navbar bg="dark" variant="dark">
+       <Container>
+         <Navbar.Brand href="/mascotas">Adóptame</Navbar.Brand>
+       </Container>
+     </Navbar>
+   </>
  );
 }
 
-export default Mascota;
+export default NavBar;
